@@ -1,7 +1,7 @@
-import {  ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components/ProductCard';
+import '../styles/custom.styles.css';
 
-
-const product ={
+const product = {
     id: "1",
     title: "Coffe Mug - Card",
     img: './coffee-mug.png'
@@ -18,12 +18,14 @@ export const ShoppingPage = () => {
                 flexDirection: 'row',
                 flexWrap: 'wrap'
             }}>
-            <ProductCard  product={  product }>
-                <ProductCard.Image/>
-                <ProductCard.Title title="hola Mundo"/>
-                <ProductCard.Bottons />
-                </ProductCard>
+                <ProductCard
+                    product={product}
+                    className="bg-dark text-white">
 
+                    <ProductCard.Image className="custom-image" />
+                    <ProductCard.Title className="text-bold" />
+                    <ProductCard.Bottons className="custom-buttons" />
+                </ProductCard>
 
 
                 {/*<ProductCard.Title title={'cafe'}/> 
@@ -34,17 +36,35 @@ export const ShoppingPage = () => {
                     } } />
                 */}
 
-                
-                <ProductCard  product={  product }>
-                <ProductCard.Image/>
-                <ProductCard.Title />
-                <ProductCard.Bottons />
+
+                <ProductCard
+                    product={product}
+                    className="bg-dark text-white">
+
+                    <ProductCard.Image className="custom-image" />
+                    <ProductCard.Title title="Hola Mundo" className="text-bold" />
+                    <ProductCard.Bottons className="custom-buttons" />
                 </ProductCard>
-                
-        
-             
-          
-        </div>
-    </div >
-  )
+
+
+                <ProductCard
+                    product={product}
+                    className="bg-dark text-white"
+                    style={{ background: '#70D1F8'}}
+                    >
+
+
+                    <ProductCard.Image className="custom-image" />
+                    <ProductCard.Title title="Hola Mundo2" className="text-bold" />
+                    <ProductCard.Bottons className="custom-buttons" 
+                     style={{ display: 'flex',
+                              justifyContent: 'end' }}
+                    />
+                </ProductCard>
+
+
+
+            </div>
+        </div >
+    )
 }
